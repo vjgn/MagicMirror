@@ -1,3 +1,62 @@
+.weatherforecast {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  /* width: 220px; */
+}
+.weatherforecast .wvj-container {
+  display: table;
+  width: 100%;
+}
+.weatherforecast .weather-forecast {
+  vertical-align: bottom;
+  width: 16%;
+}
+
+.weatherforecast .weather-current {
+  vertical-align: bottom;
+  text-align: right;
+  font-size: 60%;
+  color: #000;
+  min-width: 250px;
+}
+
+.weatherforecast .weather-current .large {
+  letter-spacing: -2px;
+  font-size: 5.0em;
+  font-weight: 300;
+}
+
+.weatherforecast .weather-current .weather-current-alt {
+  letter-spacing: -2px;
+  font-size: 3.2em;
+  font-weight: 300;
+}
+
+.weatherforecast .weather-item {
+  display: table-cell;
+  text-align: center;
+}
+
+.weatherforecast .weather-item .day {
+  margin-bottom: .2em;
+}
+
+.weatherforecast .weather-forecast-item-high, .weather-horiz .weather-forecast-item-low {
+  padding: 5px;
+  display: block;
+}
+
+.weatherforecast .day {
+  text-transform: uppercase;
+}
+
+.weatherforecast .module-header {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+/*
 .weatherforecast .day {
   padding-left: 0;
   padding-right: 25px;
@@ -25,3 +84,4 @@
 .weatherforecast tr.colored .max-temp {
   color: #FF8E99;
 }
+*/

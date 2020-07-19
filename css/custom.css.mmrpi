@@ -1,0 +1,109 @@
+
+body, html {
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 0px rgba(0,0,0,.3);
+}
+
+.region .top {
+    z-index: 1000;
+}
+.currentweather .normal,
+.currentweather .dimmed {
+    color: #fff;
+}
+
+.CX2 .slot .slotFooter {
+	display: none;
+}
+
+.CX2 .event {
+    background: none;
+}
+
+.CX2 .event .eventTitle {
+    font-weight: 400;
+}
+
+.CX2 .event.passed::before {
+    background: none;
+}
+
+/* .CX2 .slot .slotHeader .slotTitle,
+.CX2 .slot .slotHeader .slotAltTitle,
+.CX2 .slot .slotHeader .slotSubTitle {
+    font-size: 24px !important;
+} */
+
+.CX2 .slot .timeline .timelineSleeve .event {
+    padding: 0;   
+}
+
+.CX2 .slot .timeline .timelineSleeve .notfullday .eventMain {
+    height: 30px;   
+}
+
+.CX2 .slot .timeline .timelineSleeve .notfullday .eventMain .eventTitle {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    font-size: 12px;
+}
+
+.CX2 .slot .timeline .timelineSleeve .fullday {
+    background-color: rgb(0, 255, 149);
+}
+
+.CX2 .slot .timeline .timelineSleeve .fullday .eventMain {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+/* .CX2 .slot .timeline .timelineSleeve .event .eventMain {
+} */
+
+#GPHOTO_INFO {
+    display:none;
+}
+
+/* #GPHOTO_BACK {
+	display:none;
+} */
+
+.clock {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.clock .time {
+    font-size: 100px;
+    /* color: rgb(0, 162, 255); */
+}
+   
+/* .clock .date {
+    font-size: 40px;
+} */
+
+#GPHOTO {
+    height: 48% !important;
+}
+
+/* #GPHOTO_CURRENT {
+    background-size:cover;
+    opacity: 0.8;
+} */
+
+/* .weatherforecast {
+    background: rgba(255, 255, 255, 0.8);
+} */
+
+/* .weatherforecast .medium {
+    font-size: 40px !important;
+} */
+
+#mmrainviewerframe {
+    width: 360px !important;
+    height: 360px !important;
+}

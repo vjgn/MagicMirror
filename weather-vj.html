@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel = "stylesheet" type = "text/css" href = "weather-icons.css" />
+  </head>
+<style>
+    .weatherforecast {
+        display: block;
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        width: 260px;
+    }
+    .weatherforecast .wvj-container {
+        display: table;
+        width: 100%;
+    }
+    .weatherforecast .weather-forecast {
+        vertical-align: bottom;
+        line-height: 2.0em;
+        width: 16%;
+    }
+
+    .weatherforecast .weather-current {
+        vertical-align: bottom;
+        text-align: right;
+        font-size: 60%;
+        color: #000;
+        min-width: 250px;
+    }
+
+    .weatherforecast .weather-current .large {
+        letter-spacing: -2px;
+        font-size: 5.0em;
+        font-weight: 300;
+    }
+
+    .weatherforecast .weather-current .weather-current-alt {
+        letter-spacing: -2px;
+        font-size: 3.2em;
+        font-weight: 300;
+    }
+    
+    .weatherforecast .weather-item {
+        display: table-cell;
+        text-align: center;
+    }
+
+    .weatherforecast .weather-item .day {
+        margin-bottom: .2em;
+    }
+
+    .weatherforecast .weather-forecast-item-high, .weather-horiz .weather-forecast-item-low {
+        padding: 5px;
+        display: block;
+    }
+    
+    .day {
+        text-transform: uppercase;
+    }
+</style>
+</head>
+
+<body>
+    <div class='weatherforecast'>
+        <div class='wvj-container'>
+            <div class="weather-item weather-current">
+                <div class="weather-current-alt font-light">
+                    <span class="wi weathericon wi-windy"></span> 8 <small>mph</small> SW		<br>
+                    <span class="wi weathericon wi-sunset"></span> 8:04pm			
+                </div>
+                <div class="large">
+                    92<sup>°</sup>
+                    <span class="weather-current-icon wi weathericon wi-cloudy" title=""></span> 
+                </div>		    
+            </div>            
+            <div class='weather-forecast weather-item'>
+                <div class='day'>Today</div>
+                <span class="wi weathericon wi-wu-mostlysunny"></span>
+                <br>
+                <span class="weather-forecast-item-high">95</span>
+                <span class="weather-forecast-item-low">78</span>
+            </div>
+            <div class='weather-forecast weather-item'>
+                <div class='day'>Sat</div>
+                <span class="wi weathericon wi-wu-partlycloudy medium"></span>
+                <br>
+                <span class="weather-forecast-item-high">95</span>
+                <span class="weather-forecast-item-low">78</span>
+            </div>
+            <div class='weather-forecast weather-item'>
+                <div class='day'>Sun</div>
+                <span class="wi weathericon wi-wu-chancetstorms medium"></span>
+                <br>
+                <span class="weather-forecast-item-high">95</span>
+                <span class="weather-forecast-item-low">78</span>
+            </div>
+            <div class='weather-forecast weather-item'>
+                <div class='day'>Mon</div>
+                <span class="wi weathericon wi-wu-rain medium"></span>
+                <br>
+                <span class="weather-forecast-item-high">95</span>
+                <span class="weather-forecast-item-low">78</span>
+            </div>
+            <div class='weather-forecast weather-item'>
+                <div class='day'>Tue</div>
+                <span class="wi weathericon wi-wu-tstorms medium"></span>
+                <br>
+                <span class="weather-forecast-item-high">95</span>
+                <span class="weather-forecast-item-low">78</span>
+            </div>                                    
+        </div>
+    </div>
+</body>
+</html>
