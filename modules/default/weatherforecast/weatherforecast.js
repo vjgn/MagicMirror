@@ -288,7 +288,7 @@ Module.register("weatherforecast", {
 			return;
 		}
 
-		params += "&cnt=" + (this.config.maxNumberOfDays < 1 || this.config.maxNumberOfDays > 17 ? 7 : this.config.maxNumberOfDays);
+		//params += "&cnt=" + (this.config.maxNumberOfDays < 1 || this.config.maxNumberOfDays > 17 ? 7 : this.config.maxNumberOfDays);
 
 		params += "&units=" + this.config.units;
 		params += "&lang=" + this.config.lang;
@@ -317,6 +317,7 @@ Module.register("weatherforecast", {
 	 * argument data object - Weather information received form openweather.org.
 	 */
 	processWeather: function (data) {
+		console.log(data);
 		this.fetchedLocationName = data.city.name + ", " + data.city.country;
 
 		this.forecast = [];
@@ -329,40 +330,44 @@ Module.register("weatherforecast", {
 
 			var day;
 			var hour;
-			if (forecast.dt_txt) {
-				day = moment(forecast.dt_txt, "YYYY-MM-DD hh:mm:ss").format("ddd");
-				hour = moment(forecast.dt_txt, "YYYY-MM-DD hh:mm:ss").format("H");
-			} else {
-				day = moment(forecast.dt, "X").format("ddd");
-				hour = moment(forecast.dt, "X").format("H");
-			}
+			// if (forecast.dt_txt) {
+			// 	day = moment(forecast.dt_txt, "YYYY-MM-DD hh:mm:ss").format("ddd");
+			// 	hour = moment(forecast.dt_txt, "YYYY-MM-DD hh:mm:ss").format("H");
+			// } else {
+				var dtLocal = moment.unix(forecast.dt).utc().local();
+				day =dtLocal.format("ddd");
+				hour = dtLocal.format("H");
+			//}
 
-			if (day !== lastDay) {
-				forecastData = {
-					day: day,
-					icon: this.config.iconTable[forecast.weather[0].icon],
-					maxTemp: this.roundValue(forecast.temp.max),
-					minTemp: this.roundValue(forecast.temp.min),
-					rain: this.processRain(forecast, data.list)
-				};
+			if (day != moment().format("ddd")) {
+				if (day !== lastDay) {
+					forecastData = {
+						day: day,
+						icon: this.config.iconTable[forecast.weather[0].icon],
+						maxTemp: this.roundValue(forecast.temp.max),
+						minTemp: this.roundValue(forecast.temp.min),
+						rain: this.processRain(forecast, data.list)
+					};
 
-				this.forecast.push(forecastData);
-				lastDay = day;
+					this.forecast.push(forecastData);
+					lastDay = day;
 
-				// Stop processing when maxNumberOfDays is reached
-				if (this.forecast.length === this.config.maxNumberOfDays) {
-					break;
-				}
-			} else {
-				//Log.log("Compare max: ", forecast.temp.max, parseFloat(forecastData.maxTemp));
-				forecastData.maxTemp = forecast.temp.max > parseFloat(forecastData.maxTemp) ? this.roundValue(forecast.temp.max) : forecastData.maxTemp;
-				//Log.log("Compare min: ", forecast.temp.min, parseFloat(forecastData.minTemp));
-				forecastData.minTemp = forecast.temp.min < parseFloat(forecastData.minTemp) ? this.roundValue(forecast.temp.min) : forecastData.minTemp;
+					// Stop processing when maxNumberOfDays is reached
+					if (this.forecast.length > this.config.maxNumberOfDays) {
+						this.forecast.pop();
+						break;
+					}
+				} else {
+					//Log.log("Compare max: ", forecast.temp.max, parseFloat(forecastData.maxTemp));
+					forecastData.maxTemp = forecast.temp.max > parseFloat(forecastData.maxTemp) ? this.roundValue(forecast.temp.max) : forecastData.maxTemp;
+					//Log.log("Compare min: ", forecast.temp.min, parseFloat(forecastData.minTemp));
+					forecastData.minTemp = forecast.temp.min < parseFloat(forecastData.minTemp) ? this.roundValue(forecast.temp.min) : forecastData.minTemp;
 
-				// Since we don't want an icon from the start of the day (in the middle of the night)
-				// we update the icon as long as it's somewhere during the day.
-				if (hour >= 8 && hour <= 17) {
-					forecastData.icon = this.config.iconTable[forecast.weather[0].icon];
+					// Since we don't want an icon from the start of the day (in the middle of the night)
+					// we update the icon as long as it's somewhere during the day.
+					if (hour >= 8 && hour <= 17) {
+						forecastData.icon = this.config.iconTable[forecast.weather[0].icon];
+					}
 				}
 			}
 		}
