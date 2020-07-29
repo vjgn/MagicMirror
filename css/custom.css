@@ -238,9 +238,9 @@ body {
     height: 360px !important;
 }
 
-/* .weatherforecast {
-    margin-right: -36px;
-} */
+.weatherforecast {
+    width: 310px;
+}
 
 .weatherforecast .wvj-container {
     background-color: rgba(0, 0, 0, 0.2);
@@ -249,5 +249,6 @@ body {
 .weatherforecast header {
     color: #fff;
     clear: both;
-    padding-right: 16px;    
+    padding-right: 16px;
+    border: none;
 }
