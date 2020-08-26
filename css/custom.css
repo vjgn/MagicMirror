@@ -85,7 +85,7 @@ body {
 .CX2 .weekSlot .slotHeader .slotTitle,
 .CX2 .weekSlot .slotHeader .slotAltTitle {
     font-size: 52px;
-    text-align: center;
+    margin: 0 auto
 } 
 
 .CX2 .weekSlot.seq_0 .cellSlot .slotSubTitle {
@@ -105,8 +105,9 @@ body {
     /* border-bottom: 2px rgb(255, 217, 0) solid; */
     /* height: calc(var(--font-size) + 10px); */
     font-weight: normal;
-    padding: 6px 36px 6px 6px;
+    padding: 6px 6px 6px 6px;
     margin: 0 3px;
+    text-align: center;
 }
 
 .CX2 .today .slotHeader .slotAltTitle,
@@ -117,7 +118,7 @@ body {
 
 .CX2 .weekSlot .timelineSleeve {
     margin-top: 3px;
-    height: calc(var(--font-size));
+    height: calc(var(--font-size)+32px);
 }
 
 .CX2 .cellSlot.weekday_7 .slotSubTitle {
@@ -167,7 +168,7 @@ body {
 .CX2 .slot .timeline .timelineSleeve .notfullday .eventMain .eventTitle,
 .CX2 .slot .timeline .timelineSleeve .notfullday .eventMain .eventTime .start,
 .CX2 .slot .timeline .timelineSleeve .notfullday .eventMain .eventTime .end {
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .CX2 .slot .timeline .timelineSleeve .fullday {
