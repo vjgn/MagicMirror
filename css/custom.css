@@ -78,6 +78,10 @@ body {
     font-size: 20px;
 }
 
+.CX2 .weeksmark {
+    display:none;
+}
+
 .CX2 .module-content {
     font-family: 'Roberto', sans-serif;
 }
@@ -118,7 +122,8 @@ body {
 
 .CX2 .weekSlot .timelineSleeve {
     margin-top: 3px;
-    height: calc(var(--font-size)+32px);
+    height: 32px;
+    /* height: calc(var(--font-size)+32px); */
 }
 
 .CX2 .cellSlot.weekday_7 .slotSubTitle {
